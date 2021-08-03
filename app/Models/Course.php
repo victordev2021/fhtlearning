@@ -8,10 +8,25 @@ use Illuminate\Database\Eloquent\Model;
 class Course extends Model
 {
     use HasFactory;
+    protected $withCount = ['students', 'reviews'];
     protected $guarded = ['id', 'status'];
     const BORRADOR = 1;
     const REVISION = 2;
     const PUBLICADO = 3;
+    // Attributes
+    public function getRatingAttribute()
+    {
+        if ($this->reviews_count) {
+            # code...
+            return round($this->reviews->avg('rating'), 1);
+        } else {
+            return 5;
+        }
+    }
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
     // Relaciones
     public function reviews()
     {
