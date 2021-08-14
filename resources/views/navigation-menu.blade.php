@@ -1,5 +1,5 @@
 @php
-$nav_links = [['name' => 'Home', 'route' => route('home'), 'active' => request()->routeIs('home')]];
+$nav_links = [['name' => 'Home', 'route' => route('home'), 'active' => request()->routeIs('home')], ['name' => 'Cursos', 'route' => route('courses.index'), 'active' => request()->routeIs('courses.index')]];
 @endphp
 <nav x-data="{ open: false }" class="bg-white border-b border-gray-100 shadow">
     <!-- Primary Navigation Menu -->
@@ -130,8 +130,9 @@ $nav_links = [['name' => 'Home', 'route' => route('home'), 'active' => request()
                                 <form method="POST" action="{{ route('logout') }}">
                                     @csrf
 
-                                    <x-jet-dropdown-link href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                                                    this.closest('form').submit();">
+                                    <x-jet-dropdown-link href="{{ route('logout') }}"
+                                        onclick="event.preventDefault();
+                                                                                            this.closest('form').submit();">
                                         {{ __('Log Out') }}
                                     </x-jet-dropdown-link>
                                 </form>
@@ -208,7 +209,7 @@ $nav_links = [['name' => 'Home', 'route' => route('home'), 'active' => request()
                         @csrf
 
                         <x-jet-responsive-nav-link href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                                this.closest('form').submit();">
+                                                                        this.closest('form').submit();">
                             {{ __('Log Out') }}
                         </x-jet-responsive-nav-link>
                     </form>

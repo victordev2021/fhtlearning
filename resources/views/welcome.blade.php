@@ -132,7 +132,7 @@
                                 ({{ $course->students_count }})
                             </p>
                         </div>
-                        <a href="{{ route('course.show', $course) }}"
+                        <a href="{{ route('courses.show', $course) }}"
                             class="block mt-2 w-full bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 rounded text-center">
                             Más información
                         </a>

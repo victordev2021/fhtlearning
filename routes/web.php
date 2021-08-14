@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CourseController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,11 +21,9 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
-Route::get('cursos', function () {
-    return 'Cursos disponibles!!!';
-})->name('courses.index');
+Route::get('cursos', [CourseController::class, 'index'])->name('courses.index');
 
 Route::get('cursos/{course}', function ($course) {
     return 'Detalle curso ' . $course;
-})->name('course.show');
-// cap 14 time 23:00
+})->name('courses.show');
+// cap 15 time 16:00
