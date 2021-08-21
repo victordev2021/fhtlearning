@@ -26,4 +26,4 @@ Route::get('cursos', [CourseController::class, 'index'])->name('courses.index');
 Route::get('cursos/{course}', function ($course) {
     return 'Detalle curso ' . $course;
 })->name('courses.show');
-// cap 15 time 16:00
+// cap 16 time 3:00
