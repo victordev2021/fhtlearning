@@ -23,7 +23,7 @@
                     <div class="py-1" role="none">
                         @foreach ($categories as $category)
                             <a wire:click="$set('category_id',{{ $category->id }})" x-on:click="open=false"
-                                class="cursor-pointer text-gray-700 block px-4 py-2 text-sm hover:bg-purple-500 hover:text-white rounded"
+                                class="uppercase cursor-pointer text-gray-700 block px-4 py-2 text-sm hover:bg-purple-500 hover:text-white rounded"
                                 role="menuitem" tabindex="-1" id="menu-item-1">{{ $category->name }}</a>
                         @endforeach
                         </form>

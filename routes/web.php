@@ -23,7 +23,5 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
 Route::get('cursos', [CourseController::class, 'index'])->name('courses.index');
 
-Route::get('cursos/{course}', function ($course) {
-    return 'Detalle curso ' . $course;
-})->name('courses.show');
-// cap 16 time 3:00
+Route::get('cursos/{course}', [CourseController::class, 'show'])->name('courses.show');
+// cap 18 time 19:00

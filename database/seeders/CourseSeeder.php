@@ -30,22 +30,22 @@ class CourseSeeder extends Seeder
                     'imageable_type' => 'App\Models\Course'
                 ]
             );
-            Requirement::factory(1)->create(
+            Requirement::factory(4)->create(
                 [
                     'course_id' => $course->id
                 ]
             );
-            Goal::factory(1)->create(
+            Goal::factory(4)->create(
                 [
                     'course_id' => $course->id
                 ]
             );
-            Audience::factory(1)->create(
+            Audience::factory(4)->create(
                 [
                     'course_id' => $course->id
                 ]
             );
-            $sections = Section::factory(1)->create(
+            $sections = Section::factory(4)->create(
                 [
                     'course_id' => $course->id
                 ]

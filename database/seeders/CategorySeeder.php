@@ -15,13 +15,13 @@ class CategorySeeder extends Seeder
     public function run()
     {
         Category::create([
-            'name' => 'Desarrollo web'
+            'name' => 'Diseño de Cargas y Predimensionamiento de Estructuras'
         ]);
         Category::create([
-            'name' => 'Diseño web'
+            'name' => 'DISEÑO ESTRUCTURAL DE FUNDACIONES SUPERFICIALES'
         ]);
         Category::create([
-            'name' => 'Programación'
+            'name' => 'Diseño de Edificios de Hormigón Armando'
         ]);
     }
 }

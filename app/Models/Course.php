@@ -72,7 +72,7 @@ class Course extends Model
     }
     public function category()
     {
-        return $this->belongsTo(Level::class);
+        return $this->belongsTo(Category::class);
     }
     public function price()
     {
