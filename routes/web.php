@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\HomeController;
+use App\Http\Livewire\CourseStatus;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,7 +28,5 @@ Route::get('cursos/{course}', [CourseController::class, 'show'])->name('courses.
 
 Route::post('courses/{course}/enrolled', [CourseController::class, 'enrolled'])->middleware('auth')->name('courses.enrolled');
 
-Route::get('course-status/{course}', function ($id) {
-    return 'Aquí vas a poder llevar el control de tu avance :)';
-})->name('course.status');
-// cap 18 time 19:00
+Route::get('course-status/{course}', CourseStatus::class)->name('courses.status');
+// cap 22 time 18:00
