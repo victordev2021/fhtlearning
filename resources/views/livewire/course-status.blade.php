@@ -9,9 +9,13 @@
             @if ($current->description)
                 <div class="text-gray-600">{{ $current->description->name }}</div>
             @endif
-            <div class="flex items-center mt-4 cursor-pointer">
-                <i class="fas fa-toggle-off text-2xl text-gray-600"></i>
-                <p class="text-sm ml-2">Marcar esta unidad como marcada</p>
+            <div wire:click="completed" class="flex items-center mt-4 cursor-pointer">
+                @if ($current->completed)
+                    <i class="fas fa-toggle-on text-2xl text-blue-600"></i>
+                @else
+                    <i class="fas fa-toggle-off text-2xl text-gray-600"></i>
+                @endif
+                <p class="text-sm ml-2">Marcar esta unidad como culminada</p>
             </div>
             <div class="card mt-2">
                 <div class="flex card-body text-gray-500 font-bold">
@@ -48,12 +52,12 @@
                             href="">{{ '@' . Str::slug($course->teacher->name, '') }}</a>
                     </div>
                 </div>
-                <p class="text-gray-600 text-sm mt-2">20% Completado</p>
+                <p class="text-gray-600 text-sm mt-2">{{ $this->advance . '%' }} Completado</p>
                 {{-- progresbar --}}
                 <div class="relative pt-1">
                     <div class="overflow-hidden h-2 mb-4 text-xs flex rounded bg-blue-200">
-                        <div style="width:30%"
-                            class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-blue-500">
+                        <div style="width:{{ $this->advance . '%' }}"
+                            class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-blue-500 transition-all duration-500">
                         </div>
                     </div>
                 </div>

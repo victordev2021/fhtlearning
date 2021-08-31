@@ -34,17 +34,18 @@
             <section class="mb-12">
                 <h1 class="font-bold text-3xl mb-2">Tamario</h1>
                 @foreach ($course->sections as $section)
-                    <article class="mb-4 shadow" @if ($loop->first)
+                    <article class="mb-4 shadow transition-all duration-500" @if ($loop->first)
                         x-data="{open:true}"
                     @else
                         x-data="{open:false}"
                 @endif
                 >
-                <header x-on:click="open=!open" class="border border-gray-300 px-4 py-2 cursor-pointer bg-gray-200">
+                <header x-on:click="open=!open"
+                    class="border border-gray-300 px-4 py-2 cursor-pointer bg-gray-200 transition-all duration-500">
                     <h1 class="font-bold text-lg text-gray-600">{{ $section->name }}<i
                             class="fas fa-plus float-right text-sm mt-2 font-normal"></i></h1>
                 </header>
-                <div class="bg-white py-2 px-4" x-show="open">
+                <div class="bg-white py-2 px-4 transition-all duration-500" x-show="open">
                     <ul class="grid grid-cols-1 gap-2">
                         @foreach ($section->lessons as $lesson)
                             <li class="text-gray-700 text-base"><i
