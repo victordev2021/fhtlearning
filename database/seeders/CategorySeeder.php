@@ -18,7 +18,7 @@ class CategorySeeder extends Seeder
             'name' => 'Diseño de Cargas y Predimensionamiento de Estructuras'
         ]);
         Category::create([
-            'name' => 'DISEÑO ESTRUCTURAL DE FUNDACIONES SUPERFICIALES'
+            'name' => 'Diseño Estructural de Fundaciones Superficiales'
         ]);
         Category::create([
             'name' => 'Diseño de Edificios de Hormigón Armando'
