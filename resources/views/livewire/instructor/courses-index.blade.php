@@ -1,10 +1,11 @@
 <div class="container py-8">
     <!-- This example requires Tailwind CSS v2.0+ -->
     <x-table-responsive>
-        <div class="px-6 py-4">
+        <div class="flex px-6 py-4">
             <input wire:keydown='clear_page' wire:model='search' type="text" name="company-website" id="company-website"
                 class="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-full sm:text-sm border-gray-300"
                 placeholder="Ingrese el nombre del curso">
+            <a href="{{ route('instructor.courses.create') }}" class="form-submit ml-2">Crear Curso</a>
         </div>
         @if ($courses->count())
             <table class="min-w-full divide-y divide-gray-200">
@@ -103,7 +104,8 @@
                                 @endswitch
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                                <a href="{{ route('instructor.courses.edit', $course) }}"
+                                    class="text-indigo-600 hover:text-indigo-900">Edit</a>
                             </td>
                         </tr>
                     @endforeach

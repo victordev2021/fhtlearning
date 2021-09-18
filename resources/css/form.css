@@ -1,0 +1,6 @@
+.form-input {
+    @apply focus:ring-indigo-200 focus:border-indigo-300 flex-1 block w-full rounded-full sm:text-sm border-gray-300;
+}
+.form-submit {
+    @apply uppercase py-2 px-4 border border-transparent text-sm font-medium rounded-full text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500;
+}
