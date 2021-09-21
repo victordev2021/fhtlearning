@@ -5,9 +5,10 @@
                 <h1 class="uppercase text-2xl font-bold">Crear nuevo curso</h1>
                 <hr class="mt-2 mb-6">
                 {!! Form::open(['route' => 'instructor.courses.store', 'files' => true]) !!}
+                {!! Form::hidden('user_id', auth()->user()->id) !!}
                 @include('instructor.courses.partials.form')
                 <div class="flex justify-end">
-                    {!! Form::submit('Crear nuevo curso', ['class' => 'form-submit']) !!}
+                    {!! Form::submit('Crear nuevo curso', ['class' => 'form-submit cursor-pointer']) !!}
                 </div>
                 {!! Form::close() !!}
             </div>
