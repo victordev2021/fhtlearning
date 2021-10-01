@@ -92,4 +92,10 @@ class User extends Authenticatable
     {
         return $this->belongsToMany(Lesson::class);
     }
+    // CUSTOM PROJECTS
+    // Relacion un a muchos
+    public function projects()
+    {
+        return $this->hasMany(Project::class);
+    }
 }

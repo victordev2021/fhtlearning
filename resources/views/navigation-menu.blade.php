@@ -127,6 +127,11 @@ $nav_links = [['name' => 'Home', 'route' => route('home'), 'active' => request()
                                         Instructor
                                     </x-jet-dropdown-link>
                                 @endcan
+                                @can('Leer proyecto')
+                                    <x-jet-dropdown-link href="{{ route('admprojects.projects.index') }}">
+                                        Proyectos
+                                    </x-jet-dropdown-link>
+                                @endcan
 
                                 @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
                                     <x-jet-dropdown-link href="{{ route('api-tokens.index') }}">
@@ -142,7 +147,7 @@ $nav_links = [['name' => 'Home', 'route' => route('home'), 'active' => request()
 
                                     <x-jet-dropdown-link href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
-                                                                                                                                        this.closest('form').submit();">
+                                                                                                                                                                                                                                this.closest('form').submit();">
                                         {{ __('Log Out') }}
                                     </x-jet-dropdown-link>
                                 </form>
@@ -218,6 +223,12 @@ $nav_links = [['name' => 'Home', 'route' => route('home'), 'active' => request()
                             Instructor
                         </x-jet-responsive-nav-link>
                     @endcan
+                    @can('Leer proyecto')
+                        <x-jet-responsive-nav-link href="{{ route('admprojects.projects.index') }}"
+                            :active="request()->routeIs('instructor.courses.index')">
+                            Proyectos
+                        </x-jet-responsive-nav-link>
+                    @endcan
 
                     @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
                         <x-jet-responsive-nav-link href="{{ route('api-tokens.index') }}"
@@ -232,7 +243,7 @@ $nav_links = [['name' => 'Home', 'route' => route('home'), 'active' => request()
 
                         <x-jet-responsive-nav-link href="{{ route('logout') }}"
                             onclick="event.preventDefault();
-                                                                                                                    this.closest('form').submit();">
+                                                                                                                                                                                                            this.closest('form').submit();">
                             {{ __('Log Out') }}
                         </x-jet-responsive-nav-link>
                     </form>

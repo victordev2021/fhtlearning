@@ -25,5 +25,9 @@ class PermissionSeeder extends Seeder
         Permission::create(['name' => 'Eliminar rol']);
         Permission::create(['name' => 'Leer usuario']);
         Permission::create(['name' => 'Editar usuario']);
+        Permission::create(['name' => 'Crear proyecto']);
+        Permission::create(['name' => 'Leer proyecto']);
+        Permission::create(['name' => 'Actualizar proyecto']);
+        Permission::create(['name' => 'Elimiar proyecto']);
     }
 }
