@@ -41,7 +41,7 @@
                         <p class="text-sm">Plataforma:{{ $item->platform->name }}</p>
                         <p class="text-sm">Enlace: <a href="{{ $item->url }}" target="_blank"
                                 class="text-blue-500 hover:text-blue-400">{{ $item->url }}</a></p>
-                        <div class="mt-2">
+                        <div class="my-2">
                             <button wire:click='edit({{ $item }})'
                                 class="btn btn-primary text-sm">Editar</button>
                             <button wire:click='destroy({{ $item }})'
