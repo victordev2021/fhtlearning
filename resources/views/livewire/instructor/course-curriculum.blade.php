@@ -25,6 +25,9 @@
                                 class="fas fa-eraser text-red-500 hover:text-red-400 cursor-pointer"></i>
                         </div>
                     </header>
+                    <div>
+                        @livewire('instructor.courses-lesson', ['section' => $item], key($item->id))
+                    </div>
                 @endif
             </div>
         </article>
