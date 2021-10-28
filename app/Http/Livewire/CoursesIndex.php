@@ -8,7 +8,7 @@ use App\Models\Level;
 use Livewire\Component;
 use Livewire\WithPagination;
 
-class CourseIndex extends Component
+class CoursesIndex extends Component
 {
     use WithPagination;
     public $category_id;
