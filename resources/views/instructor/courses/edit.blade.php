@@ -1,7 +1,7 @@
-<x-instructor-layout>
-    <x-slot name="course">
+<x-instructor-layout :course="$course">
+    {{-- <x-slot name="course">
         {{ $course->slug }}
-    </x-slot>
+    </x-slot> --}}
     <div class="card-body text-gray-600">
         <h1 class="uppercase text-2xl font-bold">información del curso</h1>
         <hr class="mt-2 mb-6">

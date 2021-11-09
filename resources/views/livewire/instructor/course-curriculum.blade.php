@@ -1,7 +1,7 @@
 <div class="text-gray-500 p-3">
-    <x-slot name="course">
+    {{-- <x-slot name="course">
         {{ $course->slug }}
-    </x-slot>
+    </x-slot> --}}
     <h1 class="uppercase text-2xl font-extrabold">Course Curriculum</h1>
     <hr class="mt-2 mb-6">
     @foreach ($course->sections as $item)
@@ -17,7 +17,8 @@
                     </form>
                 @else
                     <header class="flex justify-between items-center">
-                        <h1 x-on:click='open=!open' class="cursor-pointer"><strong>Section: </strong>{{ $item->name }}</h1>
+                        <h1 x-on:click='open=!open' class="cursor-pointer"><strong>Section: </strong>{{ $item->name }}
+                        </h1>
                         <div>
                             <i class="fas fa-edit text-blue-500 hover:text-blue-400 cursor-pointer"
                                 wire:click='edit({{ $item }})'></i>

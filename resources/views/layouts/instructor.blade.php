@@ -40,7 +40,7 @@
         <div class="container py-8 grid grid-cols-5">
             <aside>
                 <h1 class="font-bold text-lg mb-4">Edición del curso</h1>
-                <ul class="text-sm text-gray-600">
+                <ul class="text-sm text-gray-600 mb-4">
                     <li
                         class="leading-7 mb-1 border-l-4 pl-2 @routeIs('instructor.courses.edit', $course) border-indigo-400 @else border-gray-300  @endif">
                         <a href="{{ route('instructor.courses.edit', $course) }}">Información del curso</a>
@@ -58,6 +58,26 @@
                         <a href="{{ route('instructor.courses.students', $course) }}">Estudiantes</a>
                     </li>
                 </ul>
+                @switch($course->status)
+                    @case(1)
+                        <form action="{{ route('instructor.courses.status', $course) }}" method="POST">
+                            @csrf
+                            <button class="btn btn-danger" type="submit">Solicitar revisión</button>
+                        </form>
+                    @break
+                    @case(2)
+                        <p class="text-yellow-500 font-bold">
+                            Este curso se encuentra en revisión.
+                        </p>
+                    @break
+                    @case(3)
+                        <p class="text-green-500 font-bold">
+                            Este curso se encuentra publicado.
+                        </p>
+                    @break
+                    @default
+
+                @endswitch
             </aside>
             {{-- formulario edición --}}
             <main class="col-span-4 card">

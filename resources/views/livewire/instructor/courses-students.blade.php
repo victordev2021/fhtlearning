@@ -1,7 +1,7 @@
 <div class="p-4 text-gray-500">
-    <x-slot name="course">
+    {{-- <x-slot name="course">
         {{ $course->slug }}
-    </x-slot>
+    </x-slot> --}}
     <h1 class="uppercase text-2xl font-bold mb-4">estudiantes del curso</h1>
     <x-table-responsive>
         <div class="px-6 py-4">
