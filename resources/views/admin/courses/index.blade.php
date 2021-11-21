@@ -8,7 +8,7 @@
 
 @section('content')
     @if (session('info'))
-        <div class="alert alert-succes">
+        <div class="alert alert-success">
             {{ session('info') }}
         </div>
     @endif
