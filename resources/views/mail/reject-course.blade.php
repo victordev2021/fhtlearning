@@ -16,7 +16,9 @@
 
 <body>
     <h1>Este es un correo electrónico de revisión de cursos.</h1>
-    <p>El curso <strong>{{ $course->title }}</strong> se ha aprobado con éxito.</p>
+    <p>El curso <strong>{{ $course->title }}</strong> no se ha aprobado.</p>
+    <h2>Motivo rechazo</h2>
+    {!! $course->observation->body !!}
 </body>
 
 </html>
