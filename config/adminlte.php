@@ -268,6 +268,11 @@ return [
         ],
         ['header' => 'OPCIONES DE CURSOS'],
         [
+            'text' => 'Categorías',
+            'route'  => 'admin.categories.index',
+            'icon' => 'fas fa-fw fa-cogs',
+        ],
+        [
             'text' => 'Pendientes de aprobación',
             'route'  => 'admin.courses.index',
             'icon' => 'fas fa-fw fa-user',
