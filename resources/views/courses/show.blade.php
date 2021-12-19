@@ -74,6 +74,7 @@
                     <p>{!! $course->description !!}</p>
                 </div>
             </section>
+            @livewire('courses-reviews', ['course' => $course], key($user->id))
         </div>
         <div class="order-1 lg:order-2">
             <section class="card mb-4">
