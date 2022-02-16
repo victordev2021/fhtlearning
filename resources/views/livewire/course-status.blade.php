@@ -9,13 +9,22 @@
             @if ($current->description)
                 <div class="text-gray-600">{{ $current->description->name }}</div>
             @endif
-            <div wire:click="completed" class="flex items-center mt-4 cursor-pointer">
-                @if ($current->completed)
-                    <i class="fas fa-toggle-on text-2xl text-blue-600"></i>
-                @else
-                    <i class="fas fa-toggle-off text-2xl text-gray-600"></i>
+            <div class="flex justify-between mt-4 mx-2">
+                {{-- Marcar como culminada --}}
+                <div wire:click="completed" class="flex items-center cursor-pointer text-gray-600">
+                    @if ($current->completed)
+                        <i class="fas fa-toggle-on text-2xl text-blue-600"></i>
+                    @else
+                        <i class="fas fa-toggle-off text-2xl text-gray-600"></i>
+                    @endif
+                    <p class="text-sm ml-2">Marcar esta unidad como culminada</p>
+                </div>
+                @if ($current->resource)
+                    <div wire:click='download' class="flex items-center text-gray-600 cursor-pointer">
+                        <i class="fas fa-download text-lg mr-2 text-gray-600"></i>
+                        <p class="text-gray-600">Descargar recurso</p>
+                    </div>
                 @endif
-                <p class="text-sm ml-2">Marcar esta unidad como culminada</p>
             </div>
             <div class="card mt-2">
                 <div class="flex card-body text-gray-500 font-bold">

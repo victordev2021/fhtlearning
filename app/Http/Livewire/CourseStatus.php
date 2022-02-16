@@ -87,4 +87,8 @@ class CourseStatus extends Component
     {
         return view('livewire.course-status');
     }
+    public function download()
+    {
+        return response()->download(storage_path('app/' . $this->current->resource->url));
+    }
 }

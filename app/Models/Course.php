@@ -81,7 +81,7 @@ class Course extends Model
     }
     public function price()
     {
-        return $this->belongsTo(Level::class);
+        return $this->belongsTo(Price::class);
     }
     // relacion muchos a muchos inversa
     public function students()
